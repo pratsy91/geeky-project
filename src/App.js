@@ -1,35 +1,11 @@
-import logo from "./logo.svg";
 import "./App.css";
-import axios from "axios";
-import { useEffect, useState } from "react";
+import Movie from "./components/Movie";
 
 function App() {
-  const [movies, setMovies] = useState([]);
-
-  const getData = async () => {
-    const response = await axios.post(
-      "https://hoblist.com/api/movieList?category=movies&language=kannada&genre=all&sort=voting",
-      {
-        category: "movies",
-        language: "kannada",
-        genre: "all",
-        sort: "voting",
-      }
-    );
-
-    setMovies(response.data.result);
-  };
-  if (movies.length > 0) {
-    console.log(movies);
-  }
-
-  useEffect(() => {
-    getData();
-  }, []);
-
   return (
     <div className="App">
-      <h1>Hell</h1>
+      <h1 className=" text-red-500">Hello</h1>
+      <Movie />
     </div>
   );
 }

@@ -10,7 +10,7 @@ function Movie() {
 
   const getData = async () => {
     const response = await axios.post(
-      "https://hoblist.com/api/movieList?category=movies&language=kannada&genre=all&sort=voting",
+      "/api/movieList?category=movies&language=kannada&genre=all&sort=voting",
       {
         category: "movies",
         language: "kannada",

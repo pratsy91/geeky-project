@@ -21,8 +21,11 @@ function Auth() {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center gap-10 h-screen overflow-y-scroll pt-64">
-      <h1 className=" text-3xl sm:text-3xl flex justify-center gap-1 text-gray-500 font-bold">
+    <div
+      className="flex flex-col justify-center items-center gap-10 h-screen overflow-y-scroll 
+    sm:pt-64 md:pt-96"
+    >
+      <h1 className=" text-3xl sm:text-xl flex justify-center gap-1 text-gray-500 font-bold">
         SignUp to Register
       </h1>
       <div className="bg-slate-200 border rounded w-3/5 py-8 mb-10">
@@ -99,7 +102,7 @@ function Auth() {
           </div>
         </form>
       </div>
-      <p className="flex gap-2 justify-center items-center text-xl sm:text-lg mb-5">
+      <p className="flex gap-2 justify-center items-center text-xl sm:text-lg mb-5 ">
         <span className="font-bold">Already a User?</span>
         <NavLink
           className="bg-red-500 px-2 py-1 rounded text-white mr-2"

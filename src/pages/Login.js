@@ -30,9 +30,12 @@ function Login() {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center gap-10 h-screen overflow-y-scroll">
+    <div
+      className="flex flex-col justify-center items-center gap-10 h-screen overflow-y-scroll 
+    md:pt-32 sm:pt-16"
+    >
       <h1
-        className=" text-5xl sm:text-3xl flex justify-center gap-1 text-gray-500 font-bold 
+        className=" text-3xl sm:text-xl flex justify-center gap-1 text-gray-500 font-bold 
       pt-24"
       >
         Login to continue

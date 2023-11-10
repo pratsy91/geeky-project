@@ -3,7 +3,7 @@ import { BiSolidCameraMovie } from "react-icons/bi";
 
 function Company() {
   return (
-    <div className=" h-screen w-11/12 flex  flex-col gap-10 justify-center items-center pt-24 overflow-y-scroll">
+    <div className=" w-11/12 flex  flex-col gap-10 justify-center items-center pt-16 pb-10 overflow-y-scroll">
       <h1 className=" text-6xl sm:text-4xl flex justify-center gap-1 text-gray-500 font-bold">
         <BiSolidCameraMovie /> Movie App
       </h1>

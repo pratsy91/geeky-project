@@ -30,13 +30,10 @@ function Login() {
   };
 
   return (
-    <div
-      className="flex flex-col justify-center items-center gap-10 h-screen overflow-y-scroll 
-    md:pt-32 sm:pt-16"
-    >
+    <div className="flex flex-col justify-center items-center gap-10  pt-4">
       <h1
         className=" text-3xl sm:text-xl flex justify-center gap-1 text-gray-500 font-bold 
-      pt-24"
+      pt-10"
       >
         Login to continue
       </h1>
@@ -85,7 +82,7 @@ function Login() {
       </div>
       {show && (
         <p
-          className="w-1/5 p-2 mb-10 z-50 sm:w-3/5  duration-1000 translate-y-10
+          className="w-2/5 p-2 sm:mx-auto  mb-10 z-50 sm:w-10/12  duration-1000 translate-y-10
         transition-transform bg-red-500 flex justify-between text-white rounded-t cursor-pointer"
         >
           {msg}

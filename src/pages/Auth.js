@@ -22,8 +22,8 @@ function Auth() {
 
   return (
     <div
-      className="flex flex-col justify-center items-center gap-10 h-screen overflow-y-scroll 
-    sm:pt-64 md:pt-96"
+      className="flex flex-col justify-center items-center gap-6 
+    pt-16"
     >
       <h1 className=" text-3xl sm:text-xl flex justify-center gap-1 text-gray-500 font-bold">
         SignUp to Register
@@ -34,7 +34,7 @@ function Auth() {
          justify-center items-start w-10/12 m-auto"
           onSubmit={signupHandler}
         >
-          <div className="flex sm:flex-col justify-between gap-4  w-4/5 mx-auto ">
+          <div className="flex sm:flex-col justify-between gap-4 sm:gap-1  w-4/5 mx-auto ">
             <label>Name: </label>
             <input
               type="text"
@@ -46,7 +46,7 @@ function Auth() {
               required
             />
           </div>
-          <div className="flex sm:flex-col justify-between gap-4  w-4/5 mx-auto ">
+          <div className="flex sm:flex-col justify-between gap-4 sm:gap-1  w-4/5 mx-auto ">
             <label>Email: </label>
             <input
               type="email"
@@ -56,7 +56,7 @@ function Auth() {
               required
             />
           </div>
-          <div className="flex sm:flex-col justify-between gap-4  w-4/5 mx-auto ">
+          <div className="flex sm:flex-col justify-between gap-4 sm:gap-1  w-4/5 mx-auto ">
             <label>Password: </label>
             <input
               type="password"
@@ -67,7 +67,7 @@ function Auth() {
               required
             />
           </div>
-          <div className="flex sm:flex-col justify-between gap-4  w-4/5 mx-auto ">
+          <div className="flex sm:flex-col justify-between gap-4 sm:gap-1  w-4/5 mx-auto ">
             <label>Phone Number: </label>
             <input
               type="tel"
@@ -78,7 +78,7 @@ function Auth() {
               required
             />
           </div>
-          <div className="flex sm:flex-col justify-between gap-4  w-4/5 mx-auto ">
+          <div className="flex sm:flex-col justify-between gap-4 sm:gap-1  w-4/5 mx-auto ">
             <label>Choose Profession: </label>
             <select
               name="profession"
@@ -95,7 +95,7 @@ function Auth() {
           <div className="w-4/5 text-start mx-auto">
             <button
               type="submit"
-              className="bg-blue-500 px-2 py-1 rounded mt-4 mb-2 text-white"
+              className="bg-blue-500 px-2 py-1 rounded mt-4 text-white"
             >
               Sign Up
             </button>

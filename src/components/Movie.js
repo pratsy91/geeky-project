@@ -21,8 +21,15 @@ function Movie() {
     setMovies(response.data.result);
   };
   if (movies.length > 0) {
-    console.log(movies);
+    console.log(movies[0]);
   }
+
+  const dates = movies.map((movie) => {
+    const newDate = new Date(movie.releasedDate * 1000);
+    return newDate;
+  });
+
+  console.log(dates);
 
   useEffect(() => {
     getData();
@@ -30,26 +37,26 @@ function Movie() {
   return (
     <ul
       className=" border-x-4 shadow-xl divide-y-0 border-double
-     border-gray-200 md:w-8/12 w-11/12 mx-auto "
+     border-gray-200 w-10/12 sm:w-11/12 mx-auto mt-4"
     >
       {movies.length > 0 ? (
         movies.map((movie) => (
           <>
             <li key={movie._id}>
               <div className=" outline-4 flex flex-col gap-4 outline-red-500 outline p-2">
-                <div className="flex md:gap-10 gap-3 justify-center">
+                <div className="flex gap-8 sm:gap-3 justify-center">
                   <div className="flex flex-col justify-center outline-4 outline-yellow-500 outline">
-                    <div className="md:text-6xl text-2xl">
+                    <div className="text-4xl sm:text-2xl">
                       <VscTriangleUp />
                     </div>
 
                     {movie.totalVoted}
-                    <div className="md:text-6xl text-2xl">
+                    <div className="text-4xl sm:text-2xl">
                       <VscTriangleDown />
                     </div>
                   </div>
-                  <div className=" flex items-center basis-3/4  gap-2 outline-4 outline-green-500 outline">
-                    <div className="p-1 basis-1/4 min-w-4 md:min-w-8">
+                  <div className=" flex items-center p-1 basis-3/4  gap-2 outline-4 outline-green-500 outline">
+                    <div className="p-1 basis-1/4 sm:min-w-4 min-w-8">
                       <img
                         src={movie.poster}
                         className="rounded shadow"
@@ -57,7 +64,7 @@ function Movie() {
                       />
                     </div>
 
-                    <div className="flex flex-col flex-wrap items-start basis-auto grow md:text-xl text-xs">
+                    <div className="flex flex-col flex-wrap items-start self-start  basis-auto text-xl sm:text-xs">
                       <h1 className=" font-bold">{movie.title}</h1>
                       <div className=" text-left">
                         <p>
@@ -75,12 +82,12 @@ function Movie() {
                           ))}
                         </p>
                       </div>
-                      <div></div>
+                      <div>{movie.releasedDate}</div>
                       <div></div>
                     </div>
                   </div>
                 </div>
-                <button className=" text-white bg-blue-400 w-11/12 mx-auto rounded">
+                <button className=" text-white bg-blue-400 w-10/12 mx-auto rounded">
                   Watch Trailer
                 </button>
               </div>

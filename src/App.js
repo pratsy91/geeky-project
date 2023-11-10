@@ -1,11 +1,20 @@
 import "./App.css";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import Root from "./pages/Root";
 import Movie from "./components/Movie";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,
+    children: [{ index: true, element: <Movie /> }],
+  },
+]);
 
 function App() {
   return (
     <div className="App">
-      <h1 className=" text-red-500">Hello</h1>
-      <Movie />
+      <RouterProvider router={router}></RouterProvider>
     </div>
   );
 }

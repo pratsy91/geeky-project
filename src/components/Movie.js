@@ -24,28 +24,41 @@ function Movie() {
     console.log(movies[0]);
   }
 
-  const dates = movies.map((movie) => {
-    const newDate = new Date(movie.releasedDate * 1000);
-    return newDate;
+  function compare(a, b) {
+    if (a.totalVoted > b.totalVoted) {
+      return -1;
+    }
+    if (a.totalVoted < b.totalVoted) {
+      return 1;
+    }
+    return 0;
+  }
+
+  movies.sort(compare);
+
+  const newMovies = movies.map((movie) => {
+    const newDate = new Date(movie.releasedDate * 1000).toLocaleDateString();
+    const nmovie = { ...movie, releasedDate: newDate };
+    return nmovie;
   });
 
-  console.log(dates);
+  console.log(newMovies);
 
   useEffect(() => {
     getData();
   }, []);
   return (
-    <ul
-      className=" border-x-4 shadow-xl divide-y-0 border-double
-     border-gray-200 w-10/12 sm:w-11/12 mx-auto mt-4"
-    >
-      {movies.length > 0 ? (
-        movies.map((movie) => (
+    <ul className="  w-10/12 sm:w-11/12 mx-auto pt-24">
+      {newMovies.length > 0 ? (
+        newMovies.map((movie) => (
           <>
             <li key={movie._id}>
-              <div className=" outline-4 flex flex-col gap-4 outline-red-500 outline p-2">
-                <div className="flex gap-8 sm:gap-3 justify-center">
-                  <div className="flex flex-col justify-center outline-4 outline-yellow-500 outline">
+              <div
+                className=" flex flex-col gap-4  border-x-4 shadow-md divide-y-0 border-double
+     border-gray-200 p-2"
+              >
+                <div className="flex gap-8 sm:gap-3 justify-center py-2">
+                  <div className="flex flex-col justify-evenly items-center ">
                     <div className="text-4xl sm:text-2xl">
                       <VscTriangleUp />
                     </div>
@@ -54,8 +67,9 @@ function Movie() {
                     <div className="text-4xl sm:text-2xl">
                       <VscTriangleDown />
                     </div>
+                    <h2 className="text-xl sm:text-xs">Votes</h2>
                   </div>
-                  <div className=" flex items-center p-1 basis-3/4  gap-2 outline-4 outline-green-500 outline">
+                  <div className=" flex items-center p-1 basis-3/4  gap-2 ">
                     <div className="p-1 basis-1/4 sm:min-w-4 min-w-8">
                       <img
                         src={movie.poster}
@@ -64,8 +78,10 @@ function Movie() {
                       />
                     </div>
 
-                    <div className="flex flex-col flex-wrap items-start self-start  basis-auto text-xl sm:text-xs">
-                      <h1 className=" font-bold">{movie.title}</h1>
+                    <div className="flex flex-col flex-wrap gap-1 items-start self-center  basis-auto text-xl sm:text-xs">
+                      <h1 className=" font-bold text-4xl sm:text-lg">
+                        {movie.title}
+                      </h1>
                       <div className=" text-left">
                         <p>
                           <span className="font-bold">Genre:</span>
@@ -82,8 +98,20 @@ function Movie() {
                           ))}
                         </p>
                       </div>
-                      <div>{movie.releasedDate}</div>
-                      <div></div>
+                      <div>
+                        <span className=" border-r-2 px-1 border-gray-400">
+                          {movie.language}
+                        </span>
+                        <span className="px-1">{movie.releasedDate}</span>
+                      </div>
+                      <div className=" text-teal-400">
+                        <span className=" border-r-2 px-1 border-teal-400">
+                          {movie.pageViews} views
+                        </span>
+                        <span className="px-1">
+                          Voted by {movie.totalVoted} People
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>

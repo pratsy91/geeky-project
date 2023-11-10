@@ -49,8 +49,12 @@ function Movie() {
                     </div>
                   </div>
                   <div className=" flex items-center basis-3/4  gap-2 outline-4 outline-green-500 outline">
-                    <div className="p-1 w-12 md:w-32 xl:basis-1/2">
-                      <img src={movie.poster} className="rounded shadow" />
+                    <div className="p-1 basis-1/4 min-w-4 md:min-w-8">
+                      <img
+                        src={movie.poster}
+                        className="rounded shadow"
+                        alt={`poster of ${movie.title}`}
+                      />
                     </div>
 
                     <div className="flex flex-col flex-wrap items-start basis-auto grow md:text-xl text-xs">
